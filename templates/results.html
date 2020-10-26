@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+{% block content %}
+<div class="row">
+	<div class="col-lg-5 mx-auto">
+			<div class="p-5 bg-white shadow rounded-lg">
+				<h5 class="border-bottom" id="filename">{{ filename }}</h5>
+				<p>{% if phish %}It's a phish{% else %}This is not a phish{% endif %}</p>
+		</div>
+		</div>
+</div>
+{% endblock %}
