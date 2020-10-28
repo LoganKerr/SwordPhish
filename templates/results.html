@@ -4,7 +4,16 @@
 	<div class="col-lg-5 mx-auto">
 			<div class="p-5 bg-white shadow rounded-lg">
 				<h5 class="border-bottom" id="filename">{{ filename }}</h5>
-				<p>{% if phish %}It's a phish{% else %}This is not a phish{% endif %}</p>
+				<p>{% if not phish %}That email is not a phish
+					{% else %}That email is a phish!
+					Phishy domains found:
+					<ul>
+						{% for domain in phishy_domains %}
+						<li>{{ domain }}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+				</p>
 		</div>
 		</div>
 </div>
